@@ -44,8 +44,19 @@ def most_common_color(a)
 		e
 	end.values.max_by(&:size).first
 end
+
+def least_common_color(a)
+	a.group_by do |e|
+		e
+	end.values.min_by(&:size).last
+end
+
+
 print "3. The most popular color is "
 print most_common_color(color)
+puts ""
+print "   The least popular color is "
+print least_common_color(color)
 puts ""
 
 # ////////////////////////////////////////////////////////////////
